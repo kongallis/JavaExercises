@@ -54,6 +54,8 @@ public class StudentSeat {
         int randomColumnSeat;
         int randomRowSeat;
         int randomSeat = 0;
+        String RandomStudent;
+        
 
         while (seatsFilled < students) {
             
@@ -68,7 +70,7 @@ public class StudentSeat {
             // Finding the column and row of student
             randomColumnSeat = randomSeat % rows ;
             randomRowSeat = randomSeat / rows;
-            String RandomStudent = classStructure[randomRowSeat-1][randomColumnSeat-1];
+            RandomStudent = classStructure[randomRowSeat-1][randomColumnSeat-1];
             
             if ( RandomStudent == null) {
                System.out.println(emptySeats + " seats are empty!");
