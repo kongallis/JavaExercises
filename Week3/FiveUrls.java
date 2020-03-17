@@ -9,7 +9,9 @@ public class FiveUrls {
     public static void main(String[] args) throws FileNotFoundException {
 
         String filePath = "/Users/macuser/Documents/ReaderWriter/urlFile.txt";
-
+        
+        writingFiles(filePath);
+        
         subdomain(filePath);
 
         urlJava(filePath);
@@ -30,6 +32,21 @@ For example the subdomain of https://www.javatpoint.com/ is javatpoint.
 The subdomain of https://docs.oracle.com/javase/8/docs/ is docs.oracle
 Also create a method that prints only the urls that contain the word java.
      */
+    
+     static void writingFiles(String fileName) throws IOException {
+        File fileToWrite = new File(fileName);
+        FileWriter fileWriter = new FileWriter(fileToWrite, true);
+        PrintWriter writer = new PrintWriter(fileToWrite, "UTF-8");
+        writer.println("https://www.javatpoint.com/");
+        writer.println("https://docs.oracle.com/javase/8/docs/");
+        writer.println("https://docs.oracle.com/javase/8/docs/");
+        writer.println("https://www.vogella.com//tutorials/java.html");
+        writer.println("https://www.tutorialspoint.com/java_technology_tutorials.htm");
+        writer.close();
+    }
+    
+    
+    
     static void subdomain(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
         Scanner sc = new Scanner(file);
